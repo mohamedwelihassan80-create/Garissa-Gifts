@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-
+import paymentRoutes from './routes/paymentRoutes.js';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
@@ -43,7 +43,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes);
 app.use('/api/notifications', notificationRoutes);
-
+app.use('/api/payments', paymentRoutes);
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
