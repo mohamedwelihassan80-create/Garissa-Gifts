@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import paymentRoutes from './routes/paymentRoutes.js';
@@ -10,9 +9,15 @@ import productRoutes from './routes/productRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
 import path from "path";
-
+import dotenv from 'dotenv';
 
 dotenv.config();
+console.log("Working Directory:", process.cwd());
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
+console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY);
+
+
+console.log('JWT_SECRET:', process.env.JWT_SECRET ? 'loaded' : 'MISSING');
 
 const app = express();
 const PORT = process.env.PORT || 5000;

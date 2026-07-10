@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const notificationSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ['order', 'login', 'register'],
+    enum: ['order', 'login', 'register', 'password-reset'],
     required: true
   },
   message: {
